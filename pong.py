@@ -36,8 +36,8 @@ class Player(GameSprite):
             self.rect.x += self.speed
 
 #create the elements of the game
-player_1 = Player(actual_pong_bar.png, (150,150))
-player_2 = Player(actual_pong_bar.png, (350,350))
+player_1 = Player('actual_pong_bar.png', 150,150)
+player_2 = Player('actual_pong_bar.png', 350,350)
 
 run = True
 clock = time.Clock()

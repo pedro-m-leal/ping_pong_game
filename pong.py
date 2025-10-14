@@ -22,7 +22,8 @@ class GameSprite(sprite.Sprite):
         self.rect.x = player_x
         self.rect.y = player_y
 
-    # method drawing the character on the window
+
+    # method rawing the character on the window
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
@@ -38,6 +39,7 @@ class Player(GameSprite):
 #create the elements of the game
 player_1 = Player('actual_pong_bar.png', 150,150)
 player_2 = Player('actual_pong_bar.png', 350,350)
+ball = GameSprite("add_ball.png", 250, 250, 50, 50, 5) 
 
 run = True
 clock = time.Clock()
@@ -47,9 +49,13 @@ speed = 5
 while run:
     #carachter introduction in the loop
     player_1.update()
+    player_2.update()
     #carachter update per loop
     player_1.reset()
-    for e in event.get():
+    player_2.reset()
+    ball.update()
+    ball.reset()
+    for e in event.get():  
         if e.type == QUIT:
             run = False
 

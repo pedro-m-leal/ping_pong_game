@@ -1,4 +1,5 @@
 from pygame import *
+from pygame.cursors import ball
 
 
 win_width = 700
@@ -22,6 +23,11 @@ class GameSprite(sprite.Sprite):
         self.rect.x = player_x
         self.rect.y = player_y
 
+    def ball():
+        pass
+
+
+
     # method drawing the character on the window
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
@@ -34,6 +40,9 @@ class Player(GameSprite):
             self.rect.x -= self.speed
         if keys[K_RIGHT] and self.rect.x < win_width - 80:
             self.rect.x += self.speed
+
+collides = sprite.groupcollide(ball, True)
+    
 
 run = True
 clock = time.Clock()

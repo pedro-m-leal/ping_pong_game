@@ -22,7 +22,8 @@ class GameSprite(sprite.Sprite):
         self.rect.x = player_x
         self.rect.y = player_y
 
-    # method drawing the character on the window
+
+    # method rawing the character on the window
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
@@ -35,12 +36,16 @@ class Player(GameSprite):
         if keys[K_RIGHT] and self.rect.x < win_width - 80:
             self.rect.x += self.speed
 
+ball = GameSprite("add_ball.png", 250, 250, 50, 50, 5) 
+
 run = True
 clock = time.Clock()
 FPS = 60
 
 while run:
-    for e in event.get():
+    ball.update()
+    ball.reset()
+    for e in event.get():  
         if e.type == QUIT:
             run = False
     

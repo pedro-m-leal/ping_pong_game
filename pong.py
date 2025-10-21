@@ -27,18 +27,18 @@ class GameSprite(sprite.Sprite):
         self.rect.y -= self.speed
 
         if self.rect.x <= 0:
-            self.rect.x = self.rect.x*(-1)
+            self.speed = self.speed*(-1)
 
         if self.rect.y <=0:
-            self.rect.y = self.rect.y*(-1)
+            self.speed = self.speed*(-1)
 
 
         if self.rect.x >= 450:
-            self.rect.x = self.rect.x*(-1)
+            self.speed = self.speed*(-1)
 
         
         if self.rect.y >= 450:
-            self.rect.y = self.rect.y*(-1)
+            self.speed = self.speed*(-1)
 
 
     # method rawing the character on the window
@@ -70,9 +70,9 @@ clock = time.Clock()
 FPS = 60
 speed = 5
 font.init()
-font = font.Font(None, 35)
-lose1 = font.render('PLAYER 1 LOSE!', True, (180, 0, 0))
-lose2 = font.render('PLAYER 2 LOSE!', True, (180, 0, 0))
+font = font.Font(None, 54)
+lose1 = font.render('PLAYER 1 LOSE!', True, (255, 255, 255))
+lose2 = font.render('PLAYER 2 LOSE!', True, (255, 255, 255))
 
 while run:
     #carachter introduction in the loop

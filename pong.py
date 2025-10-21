@@ -22,6 +22,10 @@ class GameSprite(sprite.Sprite):
         self.rect.x = player_x
         self.rect.y = player_y
 
+    def update_ball(self):
+        self.rect.x -= self.speed
+        self.rect.y -= self.speed
+
 
     # method rawing the character on the window
     def reset(self):
@@ -59,7 +63,7 @@ while run:
     #carachter update per loop
     player_1.reset()
     player_2.reset()
-    ball.update()
+    ball.update_ball()
     ball.reset()
     for e in event.get():  
         if e.type == QUIT:

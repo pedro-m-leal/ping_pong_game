@@ -61,8 +61,8 @@ class Player(GameSprite):
             self.rect.y += self.speed
 
 #create the elements of the game
-player_1 = Player('actual_pong_bar.png', 150,150, 350, 100, 5)
-player_2 = Player('actual_pong_bar.png', 350,350, 350, 100, 5)
+player_1 = Player('actual_pong_bar.png', -100,20, 350, 100, 5)
+player_2 = Player('actual_pong_bar.png', 450,400, 350, 100, 5)
 ball = GameSprite("add_ball.png", 250, 250, 50, 50, 5) 
 
 run = True

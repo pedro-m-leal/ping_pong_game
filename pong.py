@@ -69,6 +69,10 @@ run = True
 clock = time.Clock()
 FPS = 60
 speed = 5
+font.init()
+font = font.Font(None, 35)
+lose1 = font.render('PLAYER 1 LOSE!', True, (180, 0, 0))
+lose2 = font.render('PLAYER 2 LOSE!', True, (180, 0, 0))
 
 while run:
     #carachter introduction in the loop
@@ -83,6 +87,9 @@ while run:
     for e in event.get():  
         if e.type == QUIT:
             run = False
-
+    if ball.rect.x < 0:
+        window.blit(lose1, (200, 200))
+    if ball.rect.x > 450:
+        window.blit(lose2, (200, 200))
     display.update()
     clock.tick(FPS)

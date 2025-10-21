@@ -26,6 +26,20 @@ class GameSprite(sprite.Sprite):
         self.rect.x -= self.speed
         self.rect.y -= self.speed
 
+        if self.rect.x <= 0:
+            self.rect.x = self.rect.x*(-1)
+
+        if self.rect.y <=0:
+            self.rect.y = self.rect.y*(-1)
+
+
+        if self.rect.x >= 450:
+            self.rect.x = self.rect.x*(-1)
+
+        
+        if self.rect.y >= 450:
+            self.rect.y = self.rect.y*(-1)
+
 
     # method rawing the character on the window
     def reset(self):
@@ -58,6 +72,7 @@ speed = 5
 
 while run:
     #carachter introduction in the loop
+    window.fill((0,0,0))
     player_1.update()
     player_2.update2()
     #carachter update per loop

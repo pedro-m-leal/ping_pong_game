@@ -31,14 +31,20 @@ class Player(GameSprite):
     # method to control the sprite with arrow keys
     def update(self):
         keys = key.get_pressed()
-        if keys[K_DOWN] and self.rect.y > 5:
-            self.rect.x -= self.speed
-        if keys[K_UP] and self.rect.y < 495:
-            self.rect.x += self.speed
+        if keys[K_UP] and self.rect.y > 5:
+            self.rect.y -= self.speed
+        if keys[K_DOWN] and self.rect.y < 495:
+            self.rect.y += self.speed
+    def update2(self):
+        keys = key.get_pressed()
+        if keys[K_w] and self.rect.y > 5:
+            self.rect.y -= self.speed
+        if keys[K_s] and self.rect.y < 495:
+            self.rect.y += self.speed
 
 #create the elements of the game
-player_1 = Player('actual_pong_bar.png', 150,150)
-player_2 = Player('actual_pong_bar.png', 350,350)
+player_1 = Player('actual_pong_bar.png', 150,150, 350, 100, 5)
+player_2 = Player('actual_pong_bar.png', 350,350, 350, 100, 5)
 ball = GameSprite("add_ball.png", 250, 250, 50, 50, 5) 
 
 run = True
@@ -49,7 +55,7 @@ speed = 5
 while run:
     #carachter introduction in the loop
     player_1.update()
-    player_2.update()
+    player_2.update2()
     #carachter update per loop
     player_1.reset()
     player_2.reset()
